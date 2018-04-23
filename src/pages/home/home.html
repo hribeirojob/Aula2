@@ -1,14 +1,30 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Pagina Home
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    Preencha o usuario e senha!
   </p>
+ <form [formGroup] = "FormLogin" (ngSubmit) = "ButLogin(); $event.preventDefault()">
+ 
+  <ion-item>
+    <ion-label floating>Usuario</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario" formControlName ="usuario"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label floating>Senha</ion-label>
+    <ion-input type="password" [(ngModel)]= "senha" formControlName ="senha"></ion-input>
+  </ion-item>
+  
+    <button ion-button full type = "subimit" [disabled]= "FormLogin.invalid">Ir para Login</button>
+    
+  
+</form>
+ 
 </ion-content>
