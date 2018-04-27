@@ -7,12 +7,45 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>formulario</ion-title>
+    <ion-title>Formulario</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+ 
+  <form [formGroup] = "FormCadast" (ngSubmit) = "show_log(); $event.preventDefault()">
+    <ion-list>    
+      <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input type="text" formControlName = "Nome"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label stacked>Sobremone</ion-label>
+        <ion-input type="text" formControlName = "Sobrenome"></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-label stacked>Endereço</ion-label>
+        <ion-input type="text" formControlName = "Endereco"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Telefone</ion-label>
+        <ion-input type="text" formControlName = "Telefone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>CPF</ion-label>
+        <ion-input type="text" formControlName = "CPF"></ion-input>
+      </ion-item>
+    
+    </ion-list>
+  
+    <button ion-button full type = "subimit" [disabled] = " FormCadast.invalid" color = "secundary" (click)="show_log()">
+      Enviar
+    </button> 
+  </form> 
 </ion-content>
