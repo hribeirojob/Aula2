@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { FormularioPage } from '../formulario/formulario';
 
 
 
@@ -43,12 +44,12 @@ export class LoginPage {
               {
                text: 'Entre',
                handler: data => {
-               this.navCtrl.push('FormularioPage');
+               this.navCtrl.push(FormularioPage);
                }  
               }
             ]
           });
-          alert.present();
+          alert.present();          
       }
 
     else
@@ -59,7 +60,8 @@ export class LoginPage {
           buttons: ['Voltar']
         });
         alert.present();
-      }  
+      } 
+      console.log( this.groupInfo.usuario, this.groupInfo.senha) 
   }
 
   Voltar(){

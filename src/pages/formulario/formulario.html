@@ -18,8 +18,8 @@
   <form [formGroup] = "FormCadast" (ngSubmit) = "show_log(); $event.preventDefault()">
     <ion-list>    
       <ion-item>
-        <ion-label stacked>Nome</ion-label>
-        <ion-input type="text" formControlName = "Nome"></ion-input>
+         <ion-label stacked>Nome</ion-label>
+        <ion-input type="text" formControlName = "Nome"></ion-input>      
       </ion-item>
     
       <ion-item>
@@ -28,24 +28,44 @@
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Endereço</ion-label>
-        <ion-input type="text" formControlName = "Endereco"></ion-input>
+        <ion-label stacked>Cidade</ion-label>
+        <ion-input type="text" formControlName = "Cidade"></ion-input>
       </ion-item>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label stacked>Endereço</ion-label>
+            <ion-input type="text" formControlName = "Endereco"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label stacked>Numero</ion-label>
+            <ion-input type="number" formControlName = "Numero" minlength="1"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
       <ion-item>
         <ion-label stacked>Telefone</ion-label>
-        <ion-input type="text" formControlName = "Telefone"></ion-input>
+        <ion-input type="number" formControlName = "Telefone" minlength="8" maxlength="13"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label stacked>CPF</ion-label>
-        <ion-input type="text" formControlName = "CPF"></ion-input>
+        <ion-input type="number" formControlName = "CPF" minlength="8" maxlength="11" ></ion-input>
       </ion-item>
     
     </ion-list>
   
-    <button ion-button full type = "subimit" [disabled] = " FormCadast.invalid" color = "secundary" (click)="show_log()">
+    <button ion-button full color = "secondary" type = "subimit" [disabled] = " FormCadast.invalid"  (click)="show_log()">
       Enviar
     </button> 
   </form> 
+  <button ion-button full color =   "danger" (click)="Voltar()">
+    Voltar para Pagina Home
+</button>
 </ion-content>
